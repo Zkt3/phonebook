@@ -1,6 +1,7 @@
 package com.zkt;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -90,7 +91,7 @@ public class Operate {
                 case 1: this.orderByName();break;
                 case 2: this.orderByAge();break;
                 case 3: this.orderBySex();break;
-                case 4: this.showAll();
+                case 4: this.showAll(); break;
                 case 5:return;
             }
         }
@@ -259,18 +260,30 @@ public class Operate {
 
     //按姓名排序
     public void orderByName(){
-
+        Collections.sort(this.list,new OrderByName());
+        //重新为记录设置序号
+        for(int i =0;i<this.list.size();i++){
+            this.list.get(i).setId(i+1);
+        }
 
     }
 
     //按年龄排序
     public void orderByAge(){
-        System.out.println("按年龄排序");
+        Collections.sort(this.list,new OrderByAge());
+        //重新为记录设置序号
+        for(int i =0;i<this.list.size();i++){
+            this.list.get(i).setId(i+1);
+        }
     }
 
     //按性别排序
     public void orderBySex(){
-        System.out.println("按性别排序");
+        Collections.sort(this.list,new OrderBySex());
+        //重新为记录设置序号
+        for(int i =0;i<this.list.size();i++){
+            this.list.get(i).setId(i+1);
+        }
     }
 
 
@@ -281,7 +294,7 @@ public class Operate {
 
         @Override
         public int compare(Person o1, Person o2) {
-            return 0;
+            return o1.getName().compareTo(o2.getName());
         }
     }
     /**
@@ -291,7 +304,7 @@ public class Operate {
 
         @Override
         public int compare(Person o1, Person o2) {
-            return 0;
+            return o1.getAge().compareTo(o2.getAge());
         }
     }
 
@@ -302,7 +315,7 @@ public class Operate {
 
         @Override
         public int compare(Person o1, Person o2) {
-            return 0;
+           return o1.getSex().compareTo(o2.getSex());
         }
     }
 
