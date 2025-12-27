@@ -98,7 +98,15 @@ public class Operate {
 
     //添加新纪录信息
     public void addOperation(){
-        System.out.println("添加新纪录");
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        String name = telNoteRegex.nameValidate();
+        String age = telNoteRegex.ageValidate();
+        String sex = telNoteRegex.sexValidate();
+        String telNum = telNoteRegex.telNumValidate();
+        String address = telNoteRegex.addressValidate();
+        Person person = new Person(name,age,sex,telNum,address);
+        this.list.add(person);
+        person.setId(this.list.size());
     }
 
     //查询全部记录
