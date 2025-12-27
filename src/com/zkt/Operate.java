@@ -65,7 +65,18 @@ public class Operate {
 
     //删除业务逻辑
     public void deleteLogic(){
-        System.out.println("删除");
+        Menu menu = new Menu();
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        while (true){
+            menu.deleteMenu();
+            int item = telNoteRegex.menuItemValidate(1,4);
+            switch (item){
+                case 1:this.showAll();break;
+                case 2:this.deleteOperation();break;
+                case 3:this.deleteAllOperation();break;
+                case 4:return;
+            }
+        }
     }
 
     //排序业务逻辑
@@ -115,12 +126,12 @@ public class Operate {
 
     //删除指定记录
     public void deleteOperation(){
-
+        System.out.println("删除");
     }
 
     //删除全部记录
     public void deleteAllOperation(){
-
+        System.out.println("删除全部");
     }
 
     //按姓名排序
