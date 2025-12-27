@@ -49,9 +49,22 @@ public class TelNoteRegex {
 
     }
 
-    //对年龄校验
+    //对年龄校验 10-99
     public String ageValidate(){
-        return null;
+        //定义校验年龄的正则表达式
+        String regex= "[1-9][0-9]";
+        //创建键盘输入对象
+        Scanner scanner = new Scanner(System.in);
+        //校验年龄
+        while (true){
+            System.out.println("请输入年龄，10-99之间");
+            String input = scanner.nextLine();
+            if(input.matches(regex)){
+                return input;
+            }else {
+                System.out.println("输入的格式错误，请检查！");
+            }
+        }
     }
 
     //对性别校验
