@@ -31,7 +31,21 @@ public class Operate {
 
     //查询业务逻辑
     public void searchLogic(){
-        System.out.println("查询");
+        Menu menu = new Menu();
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        while (true){
+            menu.searchMenu();
+            int item = telNoteRegex.menuItemValidate(1,7);
+            switch (item){
+                case 1:this.searchByName();break;
+                case 2:this.searchByAge();break;
+                case 3:this.searchBySex();break;
+                case 4:this.searchByTelNum();break;
+                case 5:this.searchByAddress();break;
+                case 6:this.showAll();break;
+                case 7:return;
+            }
+        }
     }
 
     //修改业务逻辑
@@ -61,27 +75,27 @@ public class Operate {
 
     //按姓名查找
     public void searchByName(){
-
+        System.out.println("姓名");
     }
 
     //按年龄查找
     public void searchByAge(){
-
+        System.out.println("年龄");
     }
 
     //按性别查找
     public void searchBySex(){
-
+        System.out.println("性别");
     }
 
     //按电话号码查找
     public void searchByTelNum(){
-
+        System.out.println("号码");
     }
 
     //按地址查找
     public void searchByAddress(){
-
+        System.out.println("地址");
     }
 
     //修改指定记录
