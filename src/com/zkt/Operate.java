@@ -15,27 +15,27 @@ public class Operate {
 
     //添加业务逻辑
     public void addLogic(){
-
+        System.out.println("添加");
     }
 
     //查询业务逻辑
     public void searchLogic(){
-
+        System.out.println("查询");
     }
 
     //修改业务逻辑
     public void modifyLogic(){
-
+        System.out.println("修改");
     }
 
     //删除业务逻辑
     public void deleteLogic(){
-
+        System.out.println("删除");
     }
 
     //排序业务逻辑
     public void orderLogic(){
-
+        System.out.println("排序");
     }
 
     //添加新纪录信息
