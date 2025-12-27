@@ -203,17 +203,58 @@ public class Operate {
 
     //修改指定记录
     public void modifyOperation(){
-        System.out.println("修改记录");
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        Menu menu = new Menu();
+        //对被修改的序号进行验证
+        System.out.println("请输入记录的序号");
+        int itemNum = telNoteRegex.menuItemValidate(1,this.list.size());
+        menu.subModifyMenu();
+        int menuItem = telNoteRegex.menuItemValidate(1,6);
+        switch (menuItem){
+            case 1:
+                String name = telNoteRegex.nameValidate();
+                this.list.get(itemNum-1).setName(name);
+                break;
+            case 2:
+                String age = telNoteRegex.ageValidate();
+                this.list.get(itemNum-1).setAge(age);
+                break;
+            case 3:
+                String sex = telNoteRegex.sexValidate();
+                this.list.get(itemNum-1).setSex(sex);
+                break;
+            case 4:
+                String telNum = telNoteRegex.telNumValidate();
+                this.list.get(itemNum-1).setTelNum(telNum);
+                break;
+            case 5:
+                String address = telNoteRegex.addressValidate();
+                this.list.get(itemNum-1).setAddress(address);
+                break;
+            case 6:
+                return;
+
+        }
     }
 
     //删除指定记录
     public void deleteOperation(){
-        System.out.println("删除");
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        System.out.println("请输入要删除的记录的序号");
+        int itemNum = telNoteRegex.menuItemValidate(1,this.list.size());
+        this.list.remove(itemNum-1);
+        //重新为记录设置序号
+        for(int i =0;i<this.list.size();i++){
+            this.list.get(i).setId(i+1);
+        }
+        System.out.println("删除成功");
+
     }
 
     //删除全部记录
     public void deleteAllOperation(){
-        System.out.println("删除全部");
+        this.list.clear();
+        System.out.println("电话本中的记录已经清空");
     }
 
     //按姓名排序
