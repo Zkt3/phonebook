@@ -67,9 +67,22 @@ public class TelNoteRegex {
         }
     }
 
-    //对性别校验
+    //对性别校验 男:m M 女:f F
     public String sexValidate(){
-        return null;
+        //定义校验性别的正则表达式
+        String regex ="[m|M|f|F]";
+        //创建键盘输入对象
+        Scanner scanner = new Scanner(System.in);
+        //校验性别
+        while (true){
+            System.out.println("请输入性别，男：m或者M，女：f或者F");
+            String input = scanner.nextLine();
+            if(input.matches(regex)){
+                return input;
+            }else {
+                System.out.println("输入的格式有误，请重新输入!");
+            }
+        }
     }
 
     //对电话号码校验
