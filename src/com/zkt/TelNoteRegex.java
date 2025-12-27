@@ -1,13 +1,33 @@
 package com.zkt;
 
 
+import java.util.Scanner;
+
 /**
  * 校验器类
  */
 public class TelNoteRegex {
     //对菜单项校验
     public int menuItemValidate(int min,int max){
-        return 0;
+        //定义验证菜单项的正则表达式
+        String regex = "[1-9]";
+        //创建键盘输入对象
+        Scanner scanner = new Scanner(System.in);
+        //判断用户输入的合法性
+        while (true){
+            System.out.println("请输入数字，最小是: "+min+" 最大是: "+max);
+            String input = scanner.nextLine();
+            if(input.matches(regex)){
+                int inputNum = Integer.parseInt(input);
+                if(inputNum>=min && inputNum<=max){
+                    return inputNum;
+                }else {
+                    System.out.println("输入的数字不在氛围内，请重新输入!");
+                }
+            }else {
+                System.out.println("必须输入数字，请检查!");
+            }
+        }
     }
 
     //对姓名校验
