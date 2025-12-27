@@ -103,8 +103,21 @@ public class TelNoteRegex {
         }
     }
 
-    //对地址校验
+    //对地址校验 字母或者数字 长度1-50
     public String addressValidate(){
-        return null;
+        //定义校验地址的正则表达式
+        String regex ="\\w{1-50}";
+        //创建键盘输入对象
+        Scanner scanner = new Scanner(System.in);
+        //校验地址
+        while (true){
+            System.out.println("请输入地址，字母或者数字，长度1-50");
+            String input = scanner.nextLine();
+            if(input.matches(regex)){
+                return input;
+            }else {
+                System.out.println("输入的地址有误，请重新输入！");
+            }
+        }
     }
 }
