@@ -50,7 +50,17 @@ public class Operate {
 
     //修改业务逻辑
     public void modifyLogic(){
-        System.out.println("修改");
+        Menu menu = new Menu();
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        while (true){
+            menu.modifyMenu();
+            int item = telNoteRegex.menuItemValidate(1,3);
+            switch (item){
+                case 1:this.showAll();break;
+                case 2:this.modifyOperation();break;
+                case 3:return;
+            }
+        }
     }
 
     //删除业务逻辑
@@ -100,7 +110,7 @@ public class Operate {
 
     //修改指定记录
     public void modifyOperation(){
-
+        System.out.println("修改记录");
     }
 
     //删除指定记录
