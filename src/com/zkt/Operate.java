@@ -1,6 +1,7 @@
 package com.zkt;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -100,6 +101,39 @@ public class Operate {
     //按性别排序
     public void orderBySex(){
 
+    }
+
+
+    /**
+     * 按姓名排序的比较器
+     */
+    class OrderByName implements Comparator<Person>{
+
+        @Override
+        public int compare(Person o1, Person o2) {
+            return 0;
+        }
+    }
+    /**
+     * 按年龄排序的比较器
+     */
+    class OrderByAge implements Comparator<Person>{
+
+        @Override
+        public int compare(Person o1, Person o2) {
+            return 0;
+        }
+    }
+
+    /**
+     * 按性别排序的比较器
+     */
+    class OrderBySex implements Comparator<Person>{
+
+        @Override
+        public int compare(Person o1, Person o2) {
+            return 0;
+        }
     }
 
 }
