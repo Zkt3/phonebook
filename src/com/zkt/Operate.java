@@ -15,7 +15,18 @@ public class Operate {
 
     //添加业务逻辑
     public void addLogic(){
-        System.out.println("添加");
+        Menu menu = new Menu();
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        while (true){
+            menu.addMenu();
+            int item = telNoteRegex.menuItemValidate(1,3);
+            switch (item){
+                case 1:this.addOperation();break;
+                case 2:this.showAll();break;
+                case 3:return;
+            }
+
+        }
     }
 
     //查询业务逻辑
@@ -40,12 +51,12 @@ public class Operate {
 
     //添加新纪录信息
     public void addOperation(){
-
+        System.out.println("添加新纪录");
     }
 
     //查询全部记录
     public void showAll(){
-
+        System.out.println("查询全部");
     }
 
     //按姓名查找
