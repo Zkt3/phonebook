@@ -122,27 +122,83 @@ public class Operate {
 
     //按姓名查找
     public void searchByName(){
-        System.out.println("姓名");
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        String name = telNoteRegex.nameValidate();
+        boolean flag =true; //默认没找到
+        for(int i =0;i<this.list.size();i++){
+            if(name.equals(this.list.get(i).getName())){
+                System.out.println(this.list.get(i));
+                flag = false;
+            }
+        }
+        if(flag){
+            System.out.println("没有此人记录");
+        }
     }
 
     //按年龄查找
     public void searchByAge(){
-        System.out.println("年龄");
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        String age = telNoteRegex.ageValidate();
+        boolean flag =true; //默认没找到
+        for(int i =0;i<this.list.size();i++){
+            if(age.equals(this.list.get(i).getAge())){
+                System.out.println(this.list.get(i));
+                flag = false;
+            }
+        }
+        if(flag){
+            System.out.println("没有此人记录");
+        }
     }
 
     //按性别查找
     public void searchBySex(){
-        System.out.println("性别");
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        String sex = telNoteRegex.sexValidate();
+        boolean flag =true; //默认没找到
+        for(int i =0;i<this.list.size();i++){
+            //忽略大小写
+            if(sex.equalsIgnoreCase(this.list.get(i).getSex())){
+                System.out.println(this.list.get(i));
+                flag = false;
+            }
+        }
+        if(flag){
+            System.out.println("没有此人记录");
+        }
     }
 
     //按电话号码查找
     public void searchByTelNum(){
-        System.out.println("号码");
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        String telNum = telNoteRegex.telNumValidate();
+        boolean flag =true; //默认没找到
+        for(int i =0;i<this.list.size();i++){
+            if(telNum.equals(this.list.get(i).getTelNum())){
+                System.out.println(this.list.get(i));
+                flag = false;
+            }
+        }
+        if(flag){
+            System.out.println("没有此人记录");
+        }
     }
 
     //按地址查找
     public void searchByAddress(){
-        System.out.println("地址");
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        String address = telNoteRegex.addressValidate();
+        boolean flag =true; //默认没找到
+        for(int i =0;i<this.list.size();i++){
+            if(address.equals(this.list.get(i).getAddress())){
+                System.out.println(this.list.get(i));
+                flag = false;
+            }
+        }
+        if(flag){
+            System.out.println("没有此人记录");
+        }
     }
 
     //修改指定记录
@@ -162,7 +218,8 @@ public class Operate {
 
     //按姓名排序
     public void orderByName(){
-        System.out.println("按姓名排序");
+
+
     }
 
     //按年龄排序
