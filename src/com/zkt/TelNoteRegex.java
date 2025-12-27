@@ -1,5 +1,9 @@
 package com.zkt;
 
+
+/**
+ * 校验器类
+ */
 public class TelNoteRegex {
     //对菜单项校验
     public int menuItemValidate(int min,int max){
