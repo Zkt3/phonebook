@@ -88,7 +88,7 @@ public class TelNoteRegex {
     //对电话号码校验 允许座机号和手机号
     public String telNumValidate() {
         //定义校验电话号码的正则表达式
-        String regex ="(\\d{3,4}-\\d{7,8}) | ([1]\\d{10})";
+        String regex ="(\\d{3,4}-\\d{7,8})|([1]\\d{10})";
         //创建键盘输入对象
         Scanner scanner = new Scanner(System.in);
         //校验手机号
@@ -106,7 +106,7 @@ public class TelNoteRegex {
     //对地址校验 字母或者数字 长度1-50
     public String addressValidate(){
         //定义校验地址的正则表达式
-        String regex ="\\w{1-50}";
+        String regex ="\\w{1,50}";
         //创建键盘输入对象
         Scanner scanner = new Scanner(System.in);
         //校验地址
@@ -119,5 +119,22 @@ public class TelNoteRegex {
                 System.out.println("输入的地址有误，请重新输入！");
             }
         }
+    }
+
+    public static void main(String[] args) {
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        /*int num = telNoteRegex.menuItemValidate(1, 6);
+        System.out.println(num);*/
+        /*String name = telNoteRegex.nameValidate();
+        System.out.println(name);*/
+        /*String age = telNoteRegex.ageValidate();
+        System.out.println(age);*/
+        /*String sex = telNoteRegex.sexValidate();
+        System.out.println(sex);*/
+        /*String telNum = telNoteRegex.telNumValidate();
+        System.out.println(telNum);*/
+        /*String address = telNoteRegex.addressValidate();
+        System.out.println(address);*/
+
     }
 }
