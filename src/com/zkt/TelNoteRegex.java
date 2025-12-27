@@ -30,8 +30,22 @@ public class TelNoteRegex {
         }
     }
 
-    //对姓名校验
+    //对姓名校验 字母长度1-10
     public String nameValidate(){
+        //定义验证姓名的正则表达式
+        String regex ="[a-zA-Z]{1,10}";
+        //创建键盘输入对象
+        Scanner scanner = new Scanner(System.in);
+        //校验姓名的合法性
+        while (true){
+            System.out.println("请输入姓名，应为字母，且长度在1-10之间");
+            String input = scanner.nextLine();
+            if(input.matches(regex)){
+                return input;
+            }else {
+                System.out.println("输入的姓名有误，请重新输入！");
+            }
+        }
         return null;
     }
 
