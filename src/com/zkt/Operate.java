@@ -111,7 +111,13 @@ public class Operate {
 
     //查询全部记录
     public void showAll(){
-        System.out.println("查询全部");
+        if(this.list.isEmpty()){
+            System.out.println("没有任何记录");
+            return;
+        }
+        for(int i =0;i<this.list.size();i++){
+            System.out.println(this.list.get(i));
+        }
     }
 
     //按姓名查找
