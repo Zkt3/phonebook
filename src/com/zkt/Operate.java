@@ -81,7 +81,19 @@ public class Operate {
 
     //排序业务逻辑
     public void orderLogic(){
-        System.out.println("排序");
+        Menu menu = new Menu();
+        TelNoteRegex telNoteRegex = new TelNoteRegex();
+        while (true){
+            menu.orderMenu();
+            int item = telNoteRegex.menuItemValidate(1,5);
+            switch (item){
+                case 1: this.orderByName();break;
+                case 2: this.orderByAge();break;
+                case 3: this.orderBySex();break;
+                case 4: this.showAll();
+                case 5:return;
+            }
+        }
     }
 
     //添加新纪录信息
@@ -136,17 +148,17 @@ public class Operate {
 
     //按姓名排序
     public void orderByName(){
-
+        System.out.println("按姓名排序");
     }
 
     //按年龄排序
     public void orderByAge(){
-
+        System.out.println("按年龄排序");
     }
 
     //按性别排序
     public void orderBySex(){
-
+        System.out.println("按性别排序");
     }
 
 
