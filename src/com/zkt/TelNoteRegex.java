@@ -85,9 +85,22 @@ public class TelNoteRegex {
         }
     }
 
-    //对电话号码校验
+    //对电话号码校验 允许座机号和手机号
     public String telNumValidate() {
-        return null;
+        //定义校验电话号码的正则表达式
+        String regex ="(\\d{3,4}-\\d{7,8}) | ([1]\\d{10})";
+        //创建键盘输入对象
+        Scanner scanner = new Scanner(System.in);
+        //校验手机号
+        while (true){
+            System.out.println("请输入电话号码，座机号或者手机号");
+            String input = scanner.nextLine();
+            if (input.matches(regex)){
+                return input;
+            }else {
+                System.out.println("输入的电话号码有误，请重新输入");
+            }
+        }
     }
 
     //对地址校验
