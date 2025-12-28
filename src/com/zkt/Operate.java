@@ -204,6 +204,10 @@ public class Operate {
 
     //修改指定记录
     public void modifyOperation(){
+        if(this.list.isEmpty()){
+            System.out.println("电话本中还没有记录");
+            return;
+        }
         TelNoteRegex telNoteRegex = new TelNoteRegex();
         Menu menu = new Menu();
         //对被修改的序号进行验证
@@ -240,6 +244,10 @@ public class Operate {
 
     //删除指定记录
     public void deleteOperation(){
+        if(this.list.isEmpty()){
+            System.out.println("电话本中没有任何记录");
+            return;
+        }
         TelNoteRegex telNoteRegex = new TelNoteRegex();
         System.out.println("请输入要删除的记录的序号");
         int itemNum = telNoteRegex.menuItemValidate(1,this.list.size());
